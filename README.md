@@ -59,12 +59,12 @@ memory limit. In the last case, least accessed objects will be removed first.
 ### Installation
 clone en tu gopath o goroot
 ```shell
-git clone https://github.com/mercadolibre/go-meli-toolkit/
+git clone https://github.com/mercadolibre/golang-restclient/
 ```
 
 ### Importing
 ```go
-import "github.com/mercadolibre/go-meli-toolkit/restful/rest"
+import "github.com/mercadolibre/golang-restclient/rest"
 ```
 
 ### Simple GET
