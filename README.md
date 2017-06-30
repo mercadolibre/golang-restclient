@@ -1,14 +1,6 @@
 # Restful
 ## A Rest Client for Go (Golang)
 ========
-
-[![Build Status](https://travis-ci.org/go-loco/restful/rest.svg?branch=master)](https://travis-ci.org/go-loco/restful/rest)
-[![Coverage Status](https://coveralls.io/repos/github/go-loco/restful/rest/badge.svg?branch=master)](https://coveralls.io/github/go-loco/restful/rest?branch=master)
-[![GoReport](https://goreportcard.com/badge/go-loco/restful/rest)](http://goreportcard.com/report/go-loco/restful/rest)
-[![Release](https://img.shields.io/github/release/go-loco/restful/rest.svg?style=flat)](https://github.com/go-loco/restful/rest/releases)
-[![GoDoc](http://godoc.org/github.com/go-loco/restful/rest?status.svg)](http://godoc.org/github.com/go-loco/restful/rest)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/go-loco/restful/rest)
-
 ## An extremely simple to use, lightweight, yet powerful REST Client
 
 ## Motivation
