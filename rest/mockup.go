@@ -2,7 +2,6 @@ package rest
 
 import (
 	"errors"
-	"flag"
 	"fmt"
 	"net/http"
 	"net/http/httptest"
@@ -25,13 +24,9 @@ var mockServerURL *url.URL
 
 // Mock serves the purpose of creating Mockups.
 // All requests will be sent to the mockup server if mockup is activated.
-// To activate the mockup *environment* you have two ways: using the flag -mock
-//	go test -mock
-//
-// Or by programmatically starting the mockup server
+// To activate the mockup *environment* you have to programmatically start the mockup server
 // 	StartMockupServer()
 type Mock struct {
-
 	// Request URL
 	URL string
 
@@ -91,14 +86,6 @@ func startMockupServ() {
 		}
 
 	}
-}
-
-func init() {
-	flag.BoolVar(&mockUpEnv, "mock", false,
-		"Use 'mock' flag to tell package rest that you would like to use mockups.")
-
-	flag.Parse()
-	startMockupServ()
 }
 
 // AddMockups ...
