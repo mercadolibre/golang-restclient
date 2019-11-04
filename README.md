@@ -173,15 +173,12 @@ resp := rb.Get("/mypath")
 
 ### Mockups
 When using mockups all requests will be sent to the mockup server.
-To activate the mockup *environment* you have two ways: using the flag -mock
-```
-go test -mock
-```
 
-Or by programmatically starting the mockup server
+To activate the mockup *environment* you need to programmatically start the mockup server
 ```
 StartMockupServer()
 ```
+
 #### A mockup example
 ```go
 myURL := "http://mytest.com/foo"
