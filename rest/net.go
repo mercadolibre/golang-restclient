@@ -132,7 +132,7 @@ func checkMockup(reqURL string) (string, string, error) {
 }
 
 func (rb *RequestBuilder) marshalReqBody(body interface{}) (b []byte, err error) {
-x
+
 	if body != nil {
 		switch rb.ContentType {
 		case JSON:
