@@ -7,6 +7,7 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
+	"mime/multipart"
 	"net"
 	"net/http"
 	"net/url"
@@ -146,12 +147,39 @@ func (rb *RequestBuilder) marshalReqBody(body interface{}) (b []byte, err error)
 				err = fmt.Errorf("bytes: body is %T(%v) not a byte slice", body, body)
 			}
 		case MULTIPART:
-			buffer := body.(*bytes.Buffer)
-			b = buffer.Bytes()
+			b, err = marshalMultipart(body)
 		}
 	}
 
 	return
+}
+
+func marshalMultipart(body interface{}) (b []byte, err error) {
+
+	buffer, ok := body.(*bytes.Buffer)
+	if !ok {
+		err = fmt.Errorf("bytes: body is %T(%v) not a byte buffer", body, body)
+	}
+
+	ok = isMultipartBuffer(buffer)
+	if !ok {
+		err = fmt.Errorf("bytes: body is %T(%v) not a multipart", body, body)
+	}
+
+	b = buffer.Bytes()
+
+	return
+}
+
+func isMultipartBuffer(buffer *bytes.Buffer) bool {
+
+	writer := multipart.NewWriter(buffer)
+	_, err := writer.CreateFormFile("file", "multipartTest")
+	if err != nil {
+		return false
+	} else {
+		return true
+	}
 }
 
 func (rb *RequestBuilder) getClient() *http.Client {
