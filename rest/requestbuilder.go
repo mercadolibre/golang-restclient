@@ -38,6 +38,9 @@ const (
 
 	// BYTES represents a plain Content Type
 	BYTES
+
+	// MULTIPART represents a Multipart Type
+	MULTIPART
 )
 
 // RequestBuilder is the baseline for creating requests
